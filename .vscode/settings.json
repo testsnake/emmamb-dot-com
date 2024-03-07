@@ -1,4 +1,7 @@
 {
     "npm.packageManager": "pnpm",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 120,
+    "editor.tabSize": 4
 }
