@@ -1,5 +1,7 @@
 {
   "common": {
-    "title": "Hello, World!"
+    "title": "Hello, World!",
+    "name": "Emma Meredith-Black",
+    "description": "description goes here"
   }
 }
