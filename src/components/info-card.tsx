@@ -28,7 +28,7 @@ const InfoCard = () => {
                     </div>
                 </div>
             </CardHeader>
-            <CardContent className="text-center pb-0">
+            <CardContent className="text-center pb-0 h-[300px]">
                 <p className="text-sm/relaxed">{t('description')}</p>
             </CardContent>
             <Separator className="my-4 w-5/10 mx-auto" />

@@ -7,6 +7,7 @@ import Contact from '@/components/icons/contact';
 import ButtonLink from './button-link';
 import ButtonSettings from './button-settings';
 import { useTranslations } from 'next-intl';
+import ContactForm from './contact-form';
 
 const ContactCard = () => {
     const t = useTranslations('common');
@@ -28,8 +29,8 @@ const ContactCard = () => {
                     </div>
                 </div>
             </CardHeader>
-            <CardContent className="text-center pb-0">
-                <p className="text-sm/relaxed">{t('description')}</p>
+            <CardContent className="text-center pb-0 h-[300px]">
+                <ContactForm />
             </CardContent>
             <Separator className="my-4 w-5/10 mx-auto" />
             <CardFooter className="flex gap-2 justify-center p-4 pt-0">

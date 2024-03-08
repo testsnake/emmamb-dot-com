@@ -6,8 +6,8 @@ export default function contact() {
     const t = useTranslations('common');
     return (
         <div className="flex h-screen dark:">
-            <div className="m-auto aspect-square 2xl align-middle justify-center flex items-center space-x-x">
-                <div className="m-auto w-[320px]">
+            <div className="mx-auto mt-40 md:mt-[20vh] ">
+                <div className="align-top w-[90vw] md:w-[520px] md:h-max">
                     <AspectRatio ratio={3 / 2}>
                         <ContactCard />
                     </AspectRatio>
