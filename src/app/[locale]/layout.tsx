@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-    title: 'EmmaMB.com',
+    title: 'Emma Meredith-Black',
     description: '',
     icons: [{ rel: 'icon', url: '/favicon.ico' }]
 };

@@ -1,0 +1,30 @@
+{
+    "common": {
+        "title": "Bonjour le monde !",
+        "name": "Emma Meredith‑Black",
+        "name-initials": "EMB",
+        "description": "description ici",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "contact": "Contact",
+        "settings": "Paramètres"
+    },
+    "settings": {
+        "title": "Paramètres",
+        "display": "Affichage",
+        "systemdefault": "Défaut système",
+        "darkmode": "Mode sombre",
+        "lightmode": "Mode clair",
+        "language": "Langue",
+        "lang-en": "English (Anglais)",
+        "lang-en-change-to": "Change to English. Changer en anglais",
+        "lang-fr": "Français",
+        "lang-fr-change-to": "Changer en français.",
+        "lang-ja": "日本語 (Japonais)",
+        "lang-ja-change-to": "日本語に変更する。Changer en japonais",
+        "lang-zh-hans": "简体中文 (Chinois simplifié)",
+        "lang-zh-hans-change-to": "切换到简体中文。Changer en chinois simplifié",
+        "lang-zh-hant": "繁體中文 (Chinois traditionnel)",
+        "lang-zh-hant-change-to": "切換到繁體中文。Changer en chinois traditionnel"
+    }
+}
