@@ -14,7 +14,11 @@ import Settings from './icons/settings';
 import { useTranslations } from 'next-intl';
 import { Link } from '../navigation';
 
-export default function ButtonSettings() {
+interface ButtonSettingsProps {
+    href: string;
+}
+
+export default function ButtonSettings(props: ButtonSettingsProps) {
     const { setTheme } = useTheme();
     const t = useTranslations('settings');
     return (
@@ -51,27 +55,27 @@ export default function ButtonSettings() {
                     <DropdownMenuSeparator />
                     <div className="space-y-1">
                         <DropdownMenuItem aria-label={t('lang-en-change-to')} asChild>
-                            <Link href="/" locale="en">
+                            <Link href={props.href} locale="en">
                                 {t('lang-en')}
                             </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem aria-label={t('lang-fr-change-to')} asChild>
-                            <Link href="/" locale="fr">
+                            <Link href={props.href} locale="fr">
                                 {t('lang-fr')}
                             </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem aria-label={t('lang-ja-change-to')} asChild>
-                            <Link href="/" locale="ja">
+                            <Link href={props.href} locale="ja">
                                 {t('lang-ja')}
                             </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem aria-label={t('lang-zh-hans-change-to')} asChild>
-                            <Link href="/" locale="zh-HANS">
+                            <Link href={props.href} locale="zh-HANS">
                                 {t('lang-zh-hans')}
                             </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem aria-label={t('lang-zh-hant-change-to')} asChild>
-                            <Link href="/" locale="zh-HANT">
+                            <Link href={props.href} locale="zh-HANT">
                                 {t('lang-zh-hant')}
                             </Link>
                         </DropdownMenuItem>
