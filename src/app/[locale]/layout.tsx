@@ -27,12 +27,7 @@ export default function RootLayout({
         <html lang={locale}>
             <body className={`font-sans ${inter.variable}`}>
                 <NextIntlClientProvider messages={messages}>
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="system"
-                        enableSystem={true}
-                        disableTransitionOnChange
-                    >
+                    <ThemeProvider attribute="class" defaultTheme="system">
                         {children}
                     </ThemeProvider>
                 </NextIntlClientProvider>
