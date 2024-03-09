@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/dialog';
 import Contact from './icons/contact';
 import { Label } from './ui/label';
+import { useTranslations } from 'next-intl';
 
 const FormSchema = z.object({
     username: z.string().min(1, {
@@ -45,7 +46,7 @@ export default function InputForm() {
     function onSubmit(data: z.infer<typeof FormSchema>) {
         console.log(data);
     }
-
+    const t = useTranslations('contact');
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -53,28 +54,69 @@ export default function InputForm() {
                     <Contact />
                 </Button>
             </DialogTrigger>
+
             <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
-                    <DialogTitle>Contact</DialogTitle>
-                    <DialogDescription>I'll try to get back to you as soon as possible.</DialogDescription>
-                </DialogHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="full-name">Name</Label>
-                        <Input id="full-name" placeholder="Name" />
+                <Form {...form}>
+                    <DialogHeader>
+                        <DialogTitle>{t('contact')}</DialogTitle>
+                        <DialogDescription>{t('contact-desc')}</DialogDescription>
+                    </DialogHeader>
+                    <div className="grid gap-4 py-4">
+                        <FormField
+                            control={form.control}
+                            name="username"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <div className="flex m-2 mt-0 inline">
+                                        <FormLabel>{t('name')}</FormLabel>
+                                        <FormMessage />
+                                    </div>
+
+                                    <FormControl>
+                                        <Input placeholder={t('name-placeholder')} {...field} />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <div className="flex m-2 inline">
+                                        <FormLabel>{t('email')}</FormLabel>
+                                        <FormMessage />
+                                    </div>
+                                    <FormControl>
+                                        <Input placeholder={t('email-placeholder')} {...field} />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="message"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <div className="flex m-2 inline">
+                                        <FormLabel>{t('message')}</FormLabel>
+                                        <FormMessage />
+                                    </div>
+                                    <FormControl>
+                                        <Textarea
+                                            placeholder={t('message-placeholder')}
+                                            className="resize-none"
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
                     </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" placeholder="Enter your email" type="email" />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea className="min-h-[100px]" id="message" placeholder="Message" />
-                    </div>
-                </div>
-                <DialogFooter>
-                    <Button>Send message</Button>
-                </DialogFooter>
+                    <DialogFooter>
+                        <Button type="submit">{t('submit')}</Button>
+                    </DialogFooter>
+                </Form>
             </DialogContent>
         </Dialog>
     );

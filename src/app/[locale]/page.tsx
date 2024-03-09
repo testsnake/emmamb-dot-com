@@ -6,12 +6,10 @@ export default function HomePage() {
     const t = useTranslations('common');
     return (
         <div className="flex h-screen dark:">
-            <div className="mx-auto mt-40 md:mt-[20vh] ">
-                <div className="align-top w-[90vw] md:w-[320px]">
-                    <AspectRatio ratio={3 / 2}>
-                        <InfoCard />
-                    </AspectRatio>
-                </div>
+            <div className="m-auto w-[90vw] md:w-[320px]">
+                <AspectRatio ratio={3 / 2}>
+                    <InfoCard />
+                </AspectRatio>
             </div>
         </div>
     );

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useTranslations } from 'next-intl';
 
 const FormSchema = z.object({
     username: z.string().min(1, {
@@ -35,6 +36,8 @@ export default function InputForm() {
         console.log(data);
     }
 
+    const t = useTranslations('contact');
+
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="">
@@ -44,12 +47,12 @@ export default function InputForm() {
                     render={({ field }) => (
                         <FormItem>
                             <div className="flex m-2 mt-0 inline">
-                                <FormLabel>Username</FormLabel>
-                                {/* <FormMessage /> */}
+                                <FormLabel>{t('name')}</FormLabel>
+                                <FormMessage />
                             </div>
 
                             <FormControl>
-                                <Input placeholder="Username" {...field} />
+                                <Input placeholder={t('name')} {...field} />
                             </FormControl>
                         </FormItem>
                     )}
@@ -61,7 +64,7 @@ export default function InputForm() {
                         <FormItem>
                             <div className="flex m-2 inline">
                                 <FormLabel>Email</FormLabel>
-                                {/* <FormMessage /> */}
+                                <FormMessage />
                             </div>
                             <FormControl>
                                 <Input placeholder="email" {...field} />
@@ -76,7 +79,7 @@ export default function InputForm() {
                         <FormItem>
                             <div className="flex m-2 inline">
                                 <FormLabel>Message</FormLabel>
-                                {/* <FormMessage /> */}
+                                <FormMessage />
                             </div>
                             <FormControl>
                                 <Textarea placeholder="message" className="resize-none" {...field} />
