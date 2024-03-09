@@ -33,6 +33,8 @@ const FormSchema = z.object({
     })
 });
 
+const apiKey = process.env.PUBLIC_ACCESS_KEY;
+
 export default function InputForm() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -43,9 +45,13 @@ export default function InputForm() {
         }
     });
 
-    function onSubmit(data: z.infer<typeof FormSchema>) {
-        console.log(data);
-    }
+    const { submit: onSubmit } = useWeb3Forms({
+        access_key: accessKey,
+        settings: {},
+        onSuccess: (msg, data) => {},
+        onError: (msg, data) => {}
+    });
+
     const t = useTranslations('contact');
     return (
         <Dialog>
@@ -57,67 +63,73 @@ export default function InputForm() {
 
             <DialogContent className="sm:max-w-[425px]">
                 <Form {...form}>
-                    <DialogHeader>
-                        <DialogTitle>{t('contact')}</DialogTitle>
-                        <DialogDescription>{t('contact-desc')}</DialogDescription>
-                    </DialogHeader>
-                    <div className="grid gap-4 py-4">
-                        <FormField
-                            control={form.control}
-                            name="username"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <div className="flex m-2 mt-0 inline">
-                                        <FormLabel>{t('name')}</FormLabel>
-                                        <FormMessage />
-                                    </div>
+                    <form onSubmit={form.handleSubmit(onSubmit)}>
+                        <DialogHeader>
+                            <DialogTitle>{t('contact')}</DialogTitle>
+                            <DialogDescription>{t('contact-desc')}</DialogDescription>
+                        </DialogHeader>
+                        <div className="grid gap-4 py-4">
+                            <FormField
+                                control={form.control}
+                                name="username"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <div className="flex m-2 mt-0 inline">
+                                            <FormLabel>{t('name')}</FormLabel>
+                                            <FormMessage />
+                                        </div>
 
-                                    <FormControl>
-                                        <Input placeholder={t('name-placeholder')} {...field} />
-                                    </FormControl>
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <div className="flex m-2 inline">
-                                        <FormLabel>{t('email')}</FormLabel>
-                                        <FormMessage />
-                                    </div>
-                                    <FormControl>
-                                        <Input placeholder={t('email-placeholder')} {...field} />
-                                    </FormControl>
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <div className="flex m-2 inline">
-                                        <FormLabel>{t('message')}</FormLabel>
-                                        <FormMessage />
-                                    </div>
-                                    <FormControl>
-                                        <Textarea
-                                            placeholder={t('message-placeholder')}
-                                            className="resize-none"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-                    <DialogFooter>
-                        <Button type="submit">{t('submit')}</Button>
-                    </DialogFooter>
+                                        <FormControl>
+                                            <Input placeholder={t('name-placeholder')} {...field} />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <div className="flex m-2 inline">
+                                            <FormLabel>{t('email')}</FormLabel>
+                                            <FormMessage />
+                                        </div>
+                                        <FormControl>
+                                            <Input placeholder={t('email-placeholder')} {...field} />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="message"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <div className="flex m-2 inline">
+                                            <FormLabel>{t('message')}</FormLabel>
+                                            <FormMessage />
+                                        </div>
+                                        <FormControl>
+                                            <Textarea placeholder={t('message-placeholder')} {...field} />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+                        <DialogFooter>
+                            <Button type="submit">{t('submit')}</Button>
+                        </DialogFooter>
+                    </form>
                 </Form>
             </DialogContent>
         </Dialog>
     );
+}
+function useWeb3Forms(arg0: {
+    access_key: any;
+    settings: {};
+    onSuccess: (msg: any, data: any) => void;
+    onError: (msg: any, data: any) => void;
+}): { submit: any } {
+    throw new Error('Function not implemented.');
 }
