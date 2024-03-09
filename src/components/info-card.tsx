@@ -7,6 +7,7 @@ import Contact from '@/components/icons/contact';
 import ButtonLink from './button-link';
 import ButtonSettings from './button-settings';
 import { useTranslations } from 'next-intl';
+import ContactDialog from './contact-dialog';
 
 const InfoCard = () => {
     const t = useTranslations('common');
@@ -39,9 +40,7 @@ const InfoCard = () => {
                 <ButtonLink href="https://www.linkedin.com/in/emma-meredith-black/" name="linkedin">
                     <LinkedIn />
                 </ButtonLink>
-                <ButtonLink href="/contact" name="contact">
-                    <Contact />
-                </ButtonLink>
+                <ContactDialog />
                 <ButtonSettings href="/" />
             </CardFooter>
         </Card>
