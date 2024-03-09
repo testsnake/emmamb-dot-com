@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 const FormSchema = z.object({
-    username: z.string().min(2, {
+    username: z.string().min(1, {
         message: 'Username must be at least 2 characters.'
     }),
     email: z.string().email({
@@ -43,23 +43,51 @@ export default function InputForm() {
                     name="username"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Username</FormLabel>
+                            <div className="flex m-2 mt-0 inline">
+                                <FormLabel>Username</FormLabel>
+                                {/* <FormMessage /> */}
+                            </div>
+
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="Username" {...field} />
                             </FormControl>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                                <Input placeholder="email" {...field} />
-                            </FormControl>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                                <Textarea placeholder="message" {...field} />
-                            </FormControl>
-                            <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <div className="flex m-2 inline">
+                                <FormLabel>Email</FormLabel>
+                                {/* <FormMessage /> */}
+                            </div>
+                            <FormControl>
+                                <Input placeholder="email" {...field} />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                        <FormItem>
+                            <div className="flex m-2 inline">
+                                <FormLabel>Message</FormLabel>
+                                {/* <FormMessage /> */}
+                            </div>
+                            <FormControl>
+                                <Textarea placeholder="message" className="resize-none" {...field} />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
+                <FormMessage />
+                <Button type="submit" className="mt-4 w-full">
+                    Submit
+                </Button>
             </form>
         </Form>
     );

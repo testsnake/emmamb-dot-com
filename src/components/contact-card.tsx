@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from '@/components/ui/separator';
 import GitHub from '@/components/icons/github';
 import LinkedIn from '@/components/icons/linkedin';
-import Contact from '@/components/icons/contact';
+import Back from '@/components/icons/back';
 import ButtonLink from './button-link';
 import ButtonSettings from './button-settings';
 import { useTranslations } from 'next-intl';
@@ -41,7 +41,7 @@ const ContactCard = () => {
                     <LinkedIn />
                 </ButtonLink>
                 <ButtonLink href="/" name="contact">
-                    <Contact />
+                    <Back />
                 </ButtonLink>
                 <ButtonSettings href="/contact" />
             </CardFooter>
