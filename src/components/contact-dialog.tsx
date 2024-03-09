@@ -21,6 +21,10 @@ import Contact from './icons/contact';
 import { Label } from './ui/label';
 import { useTranslations } from 'next-intl';
 
+import dotenv from 'dotenv';
+dotenv.config();
+const accessKey = process.env.PUBLIC_ACCESS_KEY;
+
 const FormSchema = z.object({
     username: z.string().min(1, {
         message: 'Username must be at least 2 characters.'
