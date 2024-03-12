@@ -1,8 +1,6 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { set, useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -21,44 +19,69 @@ import Contact from './icons/contact';
 import { Label } from './ui/label';
 import { useTranslations } from 'next-intl';
 
-import dotenv from 'dotenv';
-dotenv.config();
-const accessKey = process.env.PUBLIC_ACCESS_KEY;
-
-const FormSchema = z.object({
-    username: z.string().min(1, {
-        message: 'Username must be at least 2 characters.'
-    }),
-    email: z.string().email({
-        message: 'Invalid email address.'
-    }),
-    message: z.string().min(1, {
-        message: 'Must include a message.'
-    })
-});
-
-const apiKey = process.env.PUBLIC_ACCESS_KEY;
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import React from 'react';
 
 export default function InputForm() {
+    const t = useTranslations('contact');
+
+    const FormSchema = z.object({
+        name: z.string().min(1, {
+            message: `${t('form-required-name')}`
+        }),
+        email: z.string().email({
+            message: `${t('form-required-email')}`
+        }),
+        message: z.string().min(1, {
+            message: `${t('form-required-message')}`
+        }),
+        key: z.string().optional()
+    });
+
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            username: '',
+            name: '',
             email: '',
-            message: ''
+            message: '',
+            key: 'ONLY_IMPLIMENT_IF_THIS_IS_ABUSED_BY_SPAMMERS_OTHERWISE_I_DONT_FEEL_LIKE_IMPLIMENTING_THIS_SO_PLEASE_DONT_SPAM_ME_THANKS'
         }
     });
 
-    const { submit: onSubmit } = useWeb3Forms({
-        access_key: accessKey,
-        settings: {},
-        onSuccess: (msg, data) => {},
-        onError: (msg, data) => {}
-    });
+    const [open, setOpen] = React.useState(false);
+    const [awaiting, setAwaiting] = React.useState(false);
 
-    const t = useTranslations('contact');
+    async function onSubmit(data: z.infer<typeof FormSchema>) {
+        setAwaiting(true);
+        const response = await sendEmail(data);
+        console.log(response);
+        if (response.action) {
+            setOpen(false);
+            form.reset();
+            setAwaiting(false);
+        }
+    }
+
+    type responseSchema = {
+        description: string;
+        action: boolean;
+    };
+
+    async function sendEmail(data: z.infer<typeof FormSchema>): Promise<responseSchema> {
+        const { name, email, message } = data;
+        const response = await fetch('/api/messages', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, message })
+        });
+        return response.json();
+    }
+
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
                 <Button className="rounded-full p-2 w-10 h-10" variant="outline">
                     <Contact />
@@ -75,7 +98,7 @@ export default function InputForm() {
                         <div className="grid gap-4 py-4">
                             <FormField
                                 control={form.control}
-                                name="username"
+                                name="name"
                                 render={({ field }) => (
                                     <FormItem>
                                         <div className="flex m-2 mt-0 inline">
@@ -121,19 +144,13 @@ export default function InputForm() {
                             />
                         </div>
                         <DialogFooter>
-                            <Button type="submit">{t('submit')}</Button>
+                            <Button type="submit" disabled={awaiting}>
+                                {t('submit')}
+                            </Button>
                         </DialogFooter>
                     </form>
                 </Form>
             </DialogContent>
         </Dialog>
     );
-}
-function useWeb3Forms(arg0: {
-    access_key: any;
-    settings: {};
-    onSuccess: (msg: any, data: any) => void;
-    onError: (msg: any, data: any) => void;
-}): { submit: any } {
-    throw new Error('Function not implemented.');
 }
