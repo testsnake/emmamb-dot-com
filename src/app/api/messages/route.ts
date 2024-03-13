@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const apiKey: string = process.env.PUBLIC_ACCESS_KEY || 'NO_API_KEY';
+const apiKey: string = process.env.EMAIL_ACCESS_KEY || 'NO_API_KEY';
 
 export const dynamic = 'force-dynamic';
 const messageRequestSchema = {
