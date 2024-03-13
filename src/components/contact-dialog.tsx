@@ -51,14 +51,19 @@ export default function InputForm() {
 
     const [open, setOpen] = React.useState(false);
     const [awaiting, setAwaiting] = React.useState(false);
+    const [errorState, setErrorState] = React.useState(false);
 
     async function onSubmit(data: z.infer<typeof FormSchema>) {
         setAwaiting(true);
         const response = await sendEmail(data);
         console.log(response);
         if (response.action) {
+            // Message sent successfully
             setOpen(false);
             form.reset();
+            setAwaiting(false);
+        } else {
+            // Some form of error, probably a 500 as all user errors are handled by zod
             setAwaiting(false);
         }
     }
@@ -80,6 +85,13 @@ export default function InputForm() {
         return response.json();
     }
 
+    function errorMessage() {
+        if (form.formState.errors.name || form.formState.errors.email || form.formState.errors.message) {
+            return t('error-validation');
+        } else if (errorState) {
+            return t('error-server');
+        }
+    }
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
@@ -101,9 +113,9 @@ export default function InputForm() {
                                 name="name"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <div className="flex m-2 mt-0 inline">
+                                        <div className="flex m-2 mt-0 justify-between">
                                             <FormLabel>{t('name')}</FormLabel>
-                                            <FormMessage />
+                                            <FormMessage className="text-sm font-medium leading-none" />
                                         </div>
 
                                         <FormControl>
@@ -117,9 +129,9 @@ export default function InputForm() {
                                 name="email"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <div className="flex m-2 inline">
+                                        <div className="flex m-2 justify-between">
                                             <FormLabel>{t('email')}</FormLabel>
-                                            <FormMessage />
+                                            <FormMessage className="text-sm font-medium leading-none" />
                                         </div>
                                         <FormControl>
                                             <Input placeholder={t('email-placeholder')} {...field} />
@@ -132,9 +144,9 @@ export default function InputForm() {
                                 name="message"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <div className="flex m-2 inline">
+                                        <div className="flex m-2 justify-between">
                                             <FormLabel>{t('message')}</FormLabel>
-                                            <FormMessage />
+                                            <FormMessage className="text-sm font-medium leading-none" />
                                         </div>
                                         <FormControl>
                                             <Textarea placeholder={t('message-placeholder')} {...field} />
@@ -144,9 +156,17 @@ export default function InputForm() {
                             />
                         </div>
                         <DialogFooter>
-                            <Button type="submit" disabled={awaiting}>
-                                {t('submit')}
-                            </Button>
+                            <div className="flex justify-between items-center w-full">
+                                <Label
+                                    className={`text-sm text-muted-foreground ${!errorState ? '' : 'invisible'}`}
+                                    aria-hidden={!errorState}
+                                >
+                                    {errorMessage()}
+                                </Label>
+                                <Button type="submit" disabled={awaiting} className="text-right">
+                                    {t('submit')}
+                                </Button>
+                            </div>
                         </DialogFooter>
                     </form>
                 </Form>
