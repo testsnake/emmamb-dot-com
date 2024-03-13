@@ -1,0 +1,52 @@
+{
+    "common": {
+        "title": "哈囉，世界！",
+        "name": "Emma Meredith‑Black",
+        "name-initials": "EMB",
+        "description": "致力於創造有意義且易於接觸的體驗",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "contact": "聯繫",
+        "settings": "設置"
+    },
+    "settings": {
+        "title": "設置",
+        "display": "顯示",
+        "systemdefault": "系統默認",
+        "darkmode": "深色模式",
+        "lightmode": "淺色模式",
+        "language": "語言",
+        "lang-en": "English",
+        "lang-en-current": "（英語）",
+        "lang-fr": "Français",
+        "lang-fr-current": "（法語）",
+        "lang-de": "Deutsch",
+        "lang-de-current": "（德語）",
+        "lang-es": "Español",
+        "lang-es-current": "（西班牙語）",
+        "lang-ja": "日本語",
+        "lang-ja-current": "（日語）",
+        "lang-zh-Hans": "简体中文",
+        "lang-zh-Hans-current": "（簡體中文）",
+        "lang-zh-Hant": "繁體中文",
+        "lang-zh-Hant-current": ""
+    },
+    "contact": {
+        "contact": "聯繫",
+        "contact-desc": "我會盡快回覆您。",
+        "name": "姓名",
+        "name-placeholder": "姓名",
+        "email": "電子郵件",
+        "email-placeholder": "Example@Example.com",
+        "message": "消息",
+        "message-placeholder": "您好！我想詢問...",
+        "send": "發送",
+        "sent": "已發送！",
+        "error-server": "發生錯誤。請稍後再試。",
+        "error-validation": "請正確填寫所有字段。",
+        "submit": "發送消息",
+        "form-required-name": "姓名至少須2個字元。",
+        "form-required-email": "請輸入有效的電子郵件地址。",
+        "form-required-message": "消息為必填項。"
+    }
+}

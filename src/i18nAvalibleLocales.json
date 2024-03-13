@@ -1,4 +1,4 @@
 {
-    "locales": ["en", "fr", "ja", "zh-HANS", "zh-HANT"],
+    "locales": ["en", "fr", "ja", "zh-Hans", "zh-Hant"],
     "defaultLocale": "en"
 }
