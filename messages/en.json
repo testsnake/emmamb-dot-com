@@ -3,7 +3,7 @@
         "title": "Hello, World!",
         "name": "Emma Meredith‑Black",
         "name-initials": "EMB",
-        "description": "description goes here",
+        "description": "Passionate about creating meaningful and accessible experiences",
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "contact": "Contact",
@@ -26,10 +26,10 @@
         "lang-es-current": " (Spanish)",
         "lang-ja": "日本語",
         "lang-ja-current": " (Japanese)",
-        "lang-zh-HANS": "简体中文",
-        "lang-zh-HANS-current": " (Simplified Chinese)",
-        "lang-zh-HANT": "繁體中文",
-        "lang-zh-HANT-current": " (Traditional Chinese)"
+        "lang-zh-Hans": "简体中文",
+        "lang-zh-Hans-current": " (Simplified Chinese)",
+        "lang-zh-Hant": "繁體中文",
+        "lang-zh-Hant-current": " (Traditional Chinese)"
     },
     "contact": {
         "contact": "Contact",

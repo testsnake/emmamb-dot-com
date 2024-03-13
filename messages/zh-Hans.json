@@ -1,0 +1,52 @@
+{
+    "common": {
+        "title": "你好，世界！",
+        "name": "Emma Meredith‑Black",
+        "name-initials": "EMB",
+        "description": "致力于创造有意义且易于接触的体验",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "contact": "联系",
+        "settings": "设置"
+    },
+    "settings": {
+        "title": "设置",
+        "display": "显示",
+        "systemdefault": "系统默认",
+        "darkmode": "深色模式",
+        "lightmode": "浅色模式",
+        "language": "语言",
+        "lang-en": "English",
+        "lang-en-current": "（英語）",
+        "lang-fr": "Français",
+        "lang-fr-current": "（法語）",
+        "lang-de": "Deutsch",
+        "lang-de-current": "（德語）",
+        "lang-es": "Español",
+        "lang-es-current": "（西班牙語）",
+        "lang-ja": "日本語",
+        "lang-ja-current": "（日语）",
+        "lang-zh-Hans": "简体中文",
+        "lang-zh-Hans-current": "",
+        "lang-zh-Hant": "繁體中文",
+        "lang-zh-Hant-current": "（繁体中文）"
+    },
+    "contact": {
+        "contact": "联系",
+        "contact-desc": "我会尽快回复您。",
+        "name": "姓名",
+        "name-placeholder": "姓名",
+        "email": "电子邮件",
+        "email-placeholder": "Example@Example.com",
+        "message": "信息",
+        "message-placeholder": "您好!我想谈论...",
+        "send": "发送",
+        "sent": "已发送!",
+        "error-server": "发生错误。请稍后重试。",
+        "error-validation": "请正确填写所有字段。",
+        "submit": "发送信息",
+        "form-required-name": "姓名至少需要2个字符。",
+        "form-required-email": "请输入有效的电子邮件地址。",
+        "form-required-message": "需要信息。"
+    }
+}
