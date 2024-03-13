@@ -6,8 +6,6 @@ import { IntlErrorCode } from 'next-intl';
 // Can be imported from a shared config
 const locales = supported.locales;
 
-import fallBackMessages from '../messages/en.json';
-
 export default getRequestConfig(async ({ locale }) => {
     // Validate that the incoming `locale` parameter is valid
     if (!locales.includes(locale as any)) notFound();

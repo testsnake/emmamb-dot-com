@@ -1,9 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import GitHub from '@/components/icons/github';
-import LinkedIn from '@/components/icons/linkedin';
-import Contact from '@/components/icons/contact';
+import GitHub from '~/components/icons/remixicon/github';
+import LinkedIn from '~/components/icons/remixicon/linkedin';
 import ButtonLink from './button-link';
 import ButtonSettings from './button-settings';
 import { useTranslations } from 'next-intl';

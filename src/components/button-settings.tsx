@@ -10,7 +10,7 @@ import {
     DropdownMenu
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
-import Settings from './icons/settings';
+import Settings from './icons/remixicon/settings';
 import { useTranslations } from 'next-intl';
 import { Link } from '../navigation';
 import locales from '../i18nAvalibleLocales.json';
