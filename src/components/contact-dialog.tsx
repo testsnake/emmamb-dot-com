@@ -95,7 +95,7 @@ export default function InputForm() {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button className="rounded-full p-2 w-10 h-10" variant="outline">
+                <Button className="rounded-full p-2 w-[100%] 2xs:w-10 h-10" variant="outline">
                     <Contact />
                 </Button>
             </DialogTrigger>

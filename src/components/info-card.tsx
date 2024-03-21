@@ -32,7 +32,7 @@ const InfoCard = () => {
                 <p className="text-sm/relaxed">{t('description')}</p>
             </CardContent>
             <Separator className="my-4 w-5/10 mx-auto" />
-            <CardFooter className="flex gap-2 justify-center p-4 pt-0">
+            <CardFooter className="flex flex-col 2xs:flex-row gap-2 justify-center p-4 pt-0">
                 <ButtonLink href="https://github.com/testsnake" name="github">
                     <GitHub />
                 </ButtonLink>

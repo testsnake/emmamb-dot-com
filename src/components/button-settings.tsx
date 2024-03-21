@@ -35,14 +35,14 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
     });
 
     return (
-        <div className="relative inline-block text-sm">
+        <div className="relative inline-block text-sm w-[100%] 2xs:w-auto">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button
                         aria-expanded="true"
                         aria-label={t('title')}
                         aria-haspopup="menu"
-                        className="rounded-full p-2 w-10 h-10"
+                        className="rounded-full p-2 w-[100%] 2xs:w-10 h-10"
                         id="mode"
                         variant="outline"
                     >
