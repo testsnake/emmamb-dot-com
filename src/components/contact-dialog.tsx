@@ -100,7 +100,7 @@ export default function InputForm() {
                 </Button>
             </DialogTrigger>
 
-            <DialogContent className="sm:max-w-[425px] w-[90%] sm:w-auto h-[90%] sm:h-auto">
+            <DialogContent className="w-[90%] lg:w-auto h-[90%] sm:h-auto overflow-y-auto">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}>
                         <DialogHeader>
@@ -108,43 +108,45 @@ export default function InputForm() {
                             <DialogDescription>{t('contact-desc')}</DialogDescription>
                         </DialogHeader>
                         <div className="grid gap-4 py-4">
-                            <FormField
-                                control={form.control}
-                                name="name"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <div className="flex m-2 mt-0 justify-between">
-                                            <FormLabel>{t('name')}</FormLabel>
-                                            <FormMessage className="text-sm font-medium leading-none" />
-                                        </div>
+                            <div className="grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-1">
+                                <FormField
+                                    control={form.control}
+                                    name="name"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <div className="flex m-2 lg:mt-0 justify-between">
+                                                <FormLabel>{t('name')}</FormLabel>
+                                                <FormMessage className="text-sm font-medium leading-none" />
+                                            </div>
 
-                                        <FormControl>
-                                            <Input placeholder={t('name-placeholder')} {...field} />
-                                        </FormControl>
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="email"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <div className="flex m-2 justify-between">
-                                            <FormLabel>{t('email')}</FormLabel>
-                                            <FormMessage className="text-sm font-medium leading-none" />
-                                        </div>
-                                        <FormControl>
-                                            <Input placeholder={t('email-placeholder')} {...field} />
-                                        </FormControl>
-                                    </FormItem>
-                                )}
-                            />
+                                            <FormControl>
+                                                <Input placeholder={t('name-placeholder')} {...field} />
+                                            </FormControl>
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="email"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <div className="flex m-2 justify-between">
+                                                <FormLabel>{t('email')}</FormLabel>
+                                                <FormMessage className="text-sm font-medium leading-none" />
+                                            </div>
+                                            <FormControl>
+                                                <Input placeholder={t('email-placeholder')} {...field} />
+                                            </FormControl>
+                                        </FormItem>
+                                    )}
+                                />
+                            </div>
                             <FormField
                                 control={form.control}
                                 name="message"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <div className="flex m-2 justify-between">
+                                        <div className="flex m-2 -mt-2 sm:mt-2 justify-between">
                                             <FormLabel>{t('message')}</FormLabel>
                                             <FormMessage className="text-sm font-medium leading-none" />
                                         </div>
