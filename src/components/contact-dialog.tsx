@@ -100,7 +100,7 @@ export default function InputForm() {
                 </Button>
             </DialogTrigger>
 
-            <DialogContent className="w-[90%] lg:w-auto h-[90%] sm:h-auto overflow-y-auto">
+            <DialogContent className="w-[90%] lg:w-auto xl:w-[500px] 2xl:w-[700px] h-[90%] sm:h-auto overflow-y-auto">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}>
                         <DialogHeader>
@@ -165,7 +165,7 @@ export default function InputForm() {
                                 >
                                     {errorMessage()}
                                 </Label>
-                                <Button type="submit" disabled={awaiting} className="text-right">
+                                <Button type="submit" disabled={awaiting} className="text-right w-[100%] 2xs:w-auto">
                                     {t('submit')}
                                 </Button>
                             </div>
