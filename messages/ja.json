@@ -1,6 +1,5 @@
 {
     "common": {
-        "title": "こんにちは、世界！",
         "name": "Emma Meredith‑Black",
         "name-initials": "EMB",
         "description": "意味のある、そしてアクセスしやすい体験を創造することに情熱を注いでいます。",
@@ -11,25 +10,26 @@
     },
     "settings": {
         "title": "設定",
+        "closeDrawer": "閉じる",
         "display": "ディスプレイ",
         "systemdefault": "システムデフォルト",
         "darkmode": "ダークモード",
         "lightmode": "ライトモード",
         "language": "言語",
         "lang-en": "English",
-        "lang-en-current": "（英語）",
+        "lang-en-current": "英語",
         "lang-fr": "Français",
-        "lang-fr-current": "（フランス語）",
+        "lang-fr-current": "フランス語",
         "lang-de": "Deutsch",
-        "lang-de-current": "（ドイツ語）",
+        "lang-de-current": "ドイツ語",
         "lang-es": "Español",
-        "lang-es-current": "（スペイン語）",
+        "lang-es-current": "スペイン語",
         "lang-ja": "日本語",
-        "lang-ja-current": "",
+        "lang-ja-current": "日本語",
         "lang-zh-Hans": "简体中文",
-        "lang-zh-Hans-current": "（簡体中文）",
+        "lang-zh-Hans-current": "簡体中文",
         "lang-zh-Hant": "繁體中文",
-        "lang-zh-Hant-current": "（繁体中文）"
+        "lang-zh-Hant-current": "繁体中文"
     },
     "contact": {
         "contact": "お問い合わせ",
@@ -48,5 +48,12 @@
         "form-required-name": "名前は2文字以上である必要があります。",
         "form-required-email": "有効なメールアドレスを入力してください。",
         "form-required-message": "メッセージが必要です。"
+    },
+    "metadata": {
+        "title": "Emma Meredith‑Black",
+        "description": "BCITでコンピューターサイエンスを学んでいます",
+        "keywords": "Emma Meredith‑Black, BCIT, コンピューターサイエンス, ソフトウェア開発, Web開発, バンクーバー, カナダ",
+        "site-name": "Emma Meredith‑Black",
+        "locale": "ja_JP"
     }
 }

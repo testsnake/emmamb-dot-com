@@ -1,4 +1,21 @@
 {
     "locales": ["en", "fr", "ja", "zh-Hans", "zh-Hant"],
-    "defaultLocale": "en"
+    "defaultLocale": "en",
+    "localesDir": {
+        "en": "/",
+        "en-US": "/",
+        "en-GB": "/",
+        "en-CA": "/",
+        "fr": "/fr",
+        "fr-CA": "/fr",
+        "fr-fr": "/fr",
+        "ja": "/ja",
+        "ja-JP": "/ja",
+        "zh": "/zh-Hans",
+        "zh-CN": "/zh-Hans",
+        "zh-Hans": "/zh-Hans",
+        "zh-TW": "/zh-Hant",
+        "zh-HK": "/zh-Hant",
+        "zh-Hant": "/zh-Hant"
+    }
 }

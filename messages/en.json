@@ -1,6 +1,5 @@
 {
     "common": {
-        "title": "Hello, World!",
         "name": "Emma Meredith‑Black",
         "name-initials": "EMB",
         "description": "Passionate about creating meaningful and accessible experiences",
@@ -11,25 +10,26 @@
     },
     "settings": {
         "title": "Settings",
+        "closeDrawer": "Close",
         "display": "Display",
         "systemdefault": "System default",
         "darkmode": "Dark mode",
         "lightmode": "Light mode",
         "language": "Language",
         "lang-en": "English",
-        "lang-en-current": "",
+        "lang-en-current": "English",
         "lang-fr": "Français",
-        "lang-fr-current": " (French)",
+        "lang-fr-current": "French",
         "lang-de": "Deutsch",
-        "lang-de-current": " (German)",
+        "lang-de-current": "German",
         "lang-es": "Español",
-        "lang-es-current": " (Spanish)",
+        "lang-es-current": "Spanish",
         "lang-ja": "日本語",
-        "lang-ja-current": " (Japanese)",
+        "lang-ja-current": "Japanese",
         "lang-zh-Hans": "简体中文",
-        "lang-zh-Hans-current": " (Simplified Chinese)",
+        "lang-zh-Hans-current": "Simplified Chinese",
         "lang-zh-Hant": "繁體中文",
-        "lang-zh-Hant-current": " (Traditional Chinese)"
+        "lang-zh-Hant-current": "Traditional Chinese"
     },
     "contact": {
         "contact": "Contact",
@@ -48,5 +48,12 @@
         "form-required-name": "Name must be at least 2 characters long.",
         "form-required-email": "Please enter a valid email address.",
         "form-required-message": "A message is required."
+    },
+    "metadata": {
+        "title": "Emma Meredith‑Black",
+        "description": "Computer Science student at BCIT",
+        "keywords": "Emma Meredith‑Black, BCIT, Computer Science, Software Development, Web Development, Vancouver, Canada",
+        "site-name": "Emma Meredith‑Black",
+        "locale": "en"
     }
 }
