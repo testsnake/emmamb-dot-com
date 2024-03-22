@@ -1,4 +1,4 @@
-name: Auto-Format on Commit to Main
+name: Format On Push
 
 on:
   push:
@@ -6,69 +6,9 @@ on:
       - main
 
 jobs:
-    format-and-commit:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              with:
-                  ref: main
-                  fetch-depth: 0
-                  persist-credentials: true
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: '20'
-
-            - uses: pnpm/action-setup@v3
-              name: Install pnpm
-              with:
-                  run_install: false
-
-            - name: Get pnpm store directory
-              id: pnpm-cache
-              run: |
-                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
-
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-
-            
-            - name: Reset and Clean Working Directory
-              run: |
-                git fetch origin main
-                git reset --hard FETCH_HEAD
-                git clean -fdx
-
-            - name: Install dependencies
-              run: pnpm install
-
-            - name: Run Prettier
-              run: pnpm run format
-
-            - name: Check for changes
-              id: git-check
-              run: |
-                  if git diff --exit-code; then
-                    echo "::set-output name=changes::false"
-                  else
-                    echo "::set-output name=changes::true"
-                  fi
-
-            - name: No changes to commit
-              if: steps.git-check.outputs.changes == 'false'
-              run: |
-                echo "No changes detected. Exiting..."
-                exit 0
-                  
-            - name: Commit and Push changes
-              if: steps.git-check.outputs.changes == 'true'
-              uses: stefanzweifel/git-auto-commit-action@v4
-              with:
-                  commit_message: '[AUTO] Apply code formatting'
-                  branch: main
-                  file_pattern: src/**/*.*
+  format-code:
+    uses: testsnake/prettier-auto-format-action/.github/workflows/auto-format-pnpm.yml@v0.0.1
+    with:
+      ref: ${{ github.ref }}
+      node-version: '20'
+    secrets: inherit
