@@ -1,12 +1,13 @@
 {
   "name": "emmamb-dot-com",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
