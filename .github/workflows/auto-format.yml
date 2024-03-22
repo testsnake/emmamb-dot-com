@@ -1,4 +1,4 @@
-name: Auto-Format on PR Merge
+name: Auto-Format on Commit to Main
 
 on:
   push:
