@@ -62,6 +62,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
             index: true,
             follow: true,
             nocache: true
+        },
+        other: {
+            "google-site-verification": "LaN35pw5rPNkAPt05x2SvVBb7Y1uhSBFNnt9EohQOqA"
         }
     };
 }
