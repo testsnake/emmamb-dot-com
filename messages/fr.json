@@ -45,13 +45,13 @@
         "error-server": "Une erreur s'est produite. Veuillez réessayer plus tard.",
         "error-validation": "Veuillez remplir correctement tous les champs.",
         "submit": "Envoyer le message",
-        "form-required-name": "Le nom doit comporter au moins 2 caractères.",
+        "form-required-name": "Le nom est requis.",
         "form-required-email": "Veuillez entrer une adresse email valide.",
         "form-required-message": "Un message est requis."
     },
     "metadata": {
         "title": "Emma Meredith‑Black",
-        "description": "Étudiant en informatique à BCIT",
+        "description": "Étudiant en informatique à BCIT de Vancouver, Canada. Passionné par la création d'expériences significatives et accessibles à tous.",
         "keywords": "Emma Meredith‑Black, BCIT, Informatique, Développement de logiciels, Développement Web, Vancouver, Canada",
         "site-name": "Emma Meredith‑Black",
         "locale": "fr"
