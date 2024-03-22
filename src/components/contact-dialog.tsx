@@ -18,6 +18,7 @@ import {
 import Contact from './icons/remixicon/contact';
 import { Label } from './ui/label';
 import { useTranslations } from 'next-intl';
+import { Loader2 } from "lucide-react"
 
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -166,6 +167,7 @@ export default function InputForm() {
                                     {errorMessage()}
                                 </Label>
                                 <Button type="submit" disabled={awaiting} className="text-right w-[100%] 2xs:w-auto">
+                                    {awaiting && <Loader2 className="w-6 h-6 animate-spin mr-2 ml-0" />}
                                     {t('submit')}
                                 </Button>
                             </div>
