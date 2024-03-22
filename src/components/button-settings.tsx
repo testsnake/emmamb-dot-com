@@ -25,7 +25,7 @@ import {
 import { useTheme } from 'next-themes';
 import Settings from './icons/remixicon/settings';
 import { useTranslations } from 'next-intl';
-import { Link } from '../navigation';
+import { Link, useRouter } from '../navigation';
 import locales from '../i18nAvalibleLocales.json';
 import { useMediaQuery } from 'usehooks-ts';
 import React from 'react';
@@ -102,9 +102,13 @@ function SettingsList({
     props: ButtonSettingsProps;
 }) {
     const { setTheme } = useTheme();
+    const router = useRouter();
     const langs = locales.locales.map((locale) => {
         return (
-            <CommandItem asChild key={locale}>
+            <CommandItem asChild key={locale} onSelect={() =>{
+                setOpen(false);
+                router.replace(props.href, { locale });
+            }}>
                 <Link href={props.href} locale={locale}>
                     {t(`lang-${locale}`)}
                     <CommandShortcut>{t(`lang-${locale}-current`)}</CommandShortcut>
