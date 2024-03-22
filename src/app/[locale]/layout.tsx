@@ -39,7 +39,6 @@ export async function generateMetadata({ params: { locale } }: { params: { local
             url: 'https://emmamb.com',
             type: 'website',
             locale: t('locale'),
-            siteName: t('site-name'),
             images: [
                 {
                     url: '/icon2.png',
