@@ -8,5 +8,6 @@
           "source": "/view-source",
           "destination": "https://github.com/testsnake/emmamb-dot-com"
         }
-      ]
+    ],
+    "trailingSlash": false
 }
