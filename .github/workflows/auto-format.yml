@@ -43,6 +43,12 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
+            - name: Reset and Clean Working Directory
+              run: |
+                git fetch origin ${{ github.event.pull_request.head.ref }}
+                git reset --hard FETCH_HEAD
+                git clean -fdx
+
             - name: Run Prettier
               run: pnpm run format
 
@@ -66,5 +72,5 @@ jobs:
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: '[AUTO] Apply code formatting'
-                  branch: main
+                  branch: ${{ github.head_ref }}
                   file_pattern: src/**/*.*
