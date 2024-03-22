@@ -7,7 +7,7 @@ on:
 
 jobs:
   format-code:
-    uses: testsnake/prettier-auto-format-action/.github/workflows/auto-format-pnpm.yml@v0.0.1
+    uses: testsnake/prettier-auto-format-action/.github/workflows/auto-format-pnpm.yml@v0.0.2
     with:
       ref: ${{ github.ref }}
       node-version: '20'
