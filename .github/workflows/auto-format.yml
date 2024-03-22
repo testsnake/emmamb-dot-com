@@ -1,67 +1,70 @@
-name: Auto-Format on Push
+name: Auto-Format on PR Merge
 
 on:
-  push:
-    branches:
-      - main
+    pull_request:
+        types: [closed]
+        branches:
+            - main
 
 jobs:
-  format-and-commit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          persist-credentials: true
+    format-and-commit:
+        runs-on: ubuntu-latest
+        if: github.event.pull_request.merged == true
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.pull_request.head.ref }}
+                  fetch-depth: 0
+                  persist-credentials: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          run_install: false
+            - uses: pnpm/action-setup@v3
+              name: Install pnpm
+              with:
+                  run_install: false
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-            echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+            - name: Get pnpm store directory
+              id: pnpm-cache
+              run: |
+                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-              ${{ runner.os }}-pnpm-store-
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
+              with:
+                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
-        run: pnpm install
+            - name: Install dependencies
+              run: pnpm install
 
-      - name: Run Prettier
-        run: pnpm run format
+            - name: Run Prettier
+              run: pnpm run format
 
-      - name: Check for changes
-        id: git-check
-        run: |
-            if git diff --exit-code; then
-              echo "::set-output name=changes::false"
-            else
-              echo "::set-output name=changes::true"
-            fi
+            - name: Check for changes
+              id: git-check
+              run: |
+                  if git diff --exit-code; then
+                    echo "::set-output name=changes::false"
+                  else
+                    echo "::set-output name=changes::true"
+                  fi
 
-      - name: No changes to commit
-        if: steps.git-check.outputs.changes == 'false'
-        run: |
-          echo "No changes detected. Exiting..."
-          exit 0
-                
-      - name: Commit and Push changes
-        if: steps.git-check.outputs.changes == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: '[AUTO] Apply code formatting'
-          branch: main
-          file_pattern: src/**/*.*
+            - name: No changes to commit
+              if: steps.git-check.outputs.changes == 'false'
+              run: |
+                echo "No changes detected. Exiting..."
+                exit 0
+                  
+            - name: Commit and Push changes
+              if: steps.git-check.outputs.changes == 'true'
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: '[AUTO] Apply code formatting'
+                  branch: main
+                  file_pattern: src/**/*.*
