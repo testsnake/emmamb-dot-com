@@ -1,6 +1,5 @@
 {
     "common": {
-        "title": "你好，世界！",
         "name": "Emma Meredith‑Black",
         "name-initials": "EMB",
         "description": "致力于创造有意义且易于接触的体验",
@@ -49,5 +48,12 @@
         "form-required-name": "姓名至少需要2个字符。",
         "form-required-email": "请输入有效的电子邮件地址。",
         "form-required-message": "需要信息。"
+    },
+    "metadata": {
+        "title": "Emma Meredith‑Black",
+        "description": "BCIT计算机科学专业学生",
+        "keywords": "Emma Meredith‑Black, BCIT, 计算机科学, 软件开发, Web开发, 温哥华, 加拿大",
+        "site-name": "Emma Meredith‑Black",
+        "locale": "zh_Hans"
     }
 }

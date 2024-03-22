@@ -16,7 +16,7 @@ const InfoCard = () => {
                 <div className="flex flex-col 2xs:flex-row items-center space-x-4">
                     <Avatar className="w-10 h-10 justify-center m-2 2xs:m-0">
                         <AvatarImage
-                            src="https://www.gravatar.com/avatar/92f6c8e968dc5df2da9ed84cdfacb078"
+                            src="/icon2.png"
                             alt="Emma Meredith-Black's Profile Picture"
                         />
                         <AvatarFallback className="bg-gradient-to-r from-indigo-600 to-pink-500">

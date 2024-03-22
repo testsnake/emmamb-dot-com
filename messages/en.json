@@ -1,6 +1,5 @@
 {
     "common": {
-        "title": "Hello, World!",
         "name": "Emma Meredith‑Black",
         "name-initials": "EMB",
         "description": "Passionate about creating meaningful and accessible experiences",
@@ -49,5 +48,12 @@
         "form-required-name": "Name must be at least 2 characters long.",
         "form-required-email": "Please enter a valid email address.",
         "form-required-message": "A message is required."
+    },
+    "metadata": {
+        "title": "Emma Meredith‑Black",
+        "description": "Computer Science student at BCIT",
+        "keywords": "Emma Meredith‑Black, BCIT, Computer Science, Software Development, Web Development, Vancouver, Canada",
+        "site-name": "Emma Meredith‑Black",
+        "locale": "en"
     }
 }
