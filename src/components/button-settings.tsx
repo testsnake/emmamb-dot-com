@@ -63,7 +63,7 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                         <Settings />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-64 p-0">
+                <PopoverContent className="w-52 p-0">
                     <SettingsList setOpen={setOpen} t={t} props={props} />
                 </PopoverContent>
             </Popover>
