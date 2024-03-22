@@ -1,19 +1,17 @@
 name: Auto-Format on PR Merge
 
 on:
-    pull_request:
-        types: [closed]
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
     format-and-commit:
         runs-on: ubuntu-latest
-        if: github.event.pull_request.merged == true
         steps:
             - uses: actions/checkout@v3
               with:
-                  ref: ${{ github.event.pull_request.head.ref }}
+                  ref: main
                   fetch-depth: 0
                   persist-credentials: true
 
