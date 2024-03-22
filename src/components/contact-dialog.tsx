@@ -18,7 +18,7 @@ import {
 import Contact from './icons/remixicon/contact';
 import { Label } from './ui/label';
 import { useTranslations } from 'next-intl';
-import { Loader2 } from "lucide-react"
+import { Loader2 } from 'lucide-react';
 
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
