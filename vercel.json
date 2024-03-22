@@ -1,0 +1,12 @@
+{
+    "crons": [{
+      "path": "/api/avatar",
+      "schedule": "0 0 * * *"
+    }],
+    "redirects": [
+        {
+          "source": "/view-source",
+          "destination": "https://github.com/testsnake/emmamb-dot-com"
+        }
+      ]
+}
