@@ -26,6 +26,7 @@ import React from 'react';
 
 export default function InputForm() {
     const t = useTranslations('contact');
+    const c = useTranslations('common');
 
     const FormSchema = z.object({
         name: z.string().min(1, {
@@ -96,12 +97,12 @@ export default function InputForm() {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button className="rounded-full p-2 w-[100%] 2xs:w-10 h-10" variant="outline">
+                <Button className="rounded-full p-2 w-[100%] 2xs:w-10 h-10" variant="outline" aria-label={c('contact')}>
                     <Contact />
                 </Button>
             </DialogTrigger>
 
-            <DialogContent className="w-[90%] lg:w-auto xl:w-[500px] 2xl:w-[700px] h-[90%] sm:h-auto overflow-y-auto">
+            <DialogContent className="w-[90%] sm:min-w-[600px] lg:w-[500px] xl:w-[700px] h-[90%] sm:h-auto overflow-y-auto">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}>
                         <DialogHeader>
@@ -117,7 +118,7 @@ export default function InputForm() {
                                         <FormItem>
                                             <div className="flex m-2 lg:mt-0 justify-between">
                                                 <FormLabel>{t('name')}</FormLabel>
-                                                <FormMessage className="text-sm font-medium leading-none" />
+                                                <FormMessage className="text-sm font-medium leading-none text-right" />
                                             </div>
 
                                             <FormControl>
@@ -133,7 +134,7 @@ export default function InputForm() {
                                         <FormItem>
                                             <div className="flex m-2 justify-between">
                                                 <FormLabel>{t('email')}</FormLabel>
-                                                <FormMessage className="text-sm font-medium leading-none" />
+                                                <FormMessage className="text-sm font-medium leading-none text-right" />
                                             </div>
                                             <FormControl>
                                                 <Input placeholder={t('email-placeholder')} {...field} />

@@ -6,7 +6,8 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "contact": "聯繫",
-        "settings": "設置"
+        "settings": "設置",
+        "pronounciation": ""
     },
     "settings": {
         "title": "設置",
@@ -45,13 +46,13 @@
         "error-server": "發生錯誤。請稍後再試。",
         "error-validation": "請正確填寫所有字段。",
         "submit": "發送消息",
-        "form-required-name": "姓名至少須2個字元。",
+        "form-required-name": "需要姓名。",
         "form-required-email": "請輸入有效的電子郵件地址。",
         "form-required-message": "消息為必填項。"
     },
     "metadata": {
         "title": "Emma Meredith‑Black",
-        "description": "BCIT電腦科學系學生",
+        "description": "Emma Meredith-Black是一名來自加拿大溫哥華的BCIT電腦科學系學生。致力於創造有意義且易於接觸的體驗。",
         "keywords": "Emma Meredith‑Black, BCIT, 電腦科學, 軟體開發, Web開發, 溫哥華, 加拿大",
         "site-name": "Emma Meredith‑Black",
         "locale": "zh_Hant"

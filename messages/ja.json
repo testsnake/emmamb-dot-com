@@ -6,7 +6,8 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "contact": "お問い合わせ",
-        "settings": "設定"
+        "settings": "設定",
+        "pronounciation": "エマ・メレディスブラック"
     },
     "settings": {
         "title": "設定",
@@ -45,13 +46,13 @@
         "error-server": "エラーが発生しました。後でもう一度お試しください。",
         "error-validation": "すべての項目を正しく入力してください。",
         "submit": "メッセージを送信する",
-        "form-required-name": "名前は2文字以上である必要があります。",
+        "form-required-name": "名前が必要です。",
         "form-required-email": "有効なメールアドレスを入力してください。",
         "form-required-message": "メッセージが必要です。"
     },
     "metadata": {
         "title": "Emma Meredith‑Black",
-        "description": "BCITでコンピューターサイエンスを学んでいます",
+        "description": "エマ・メレディスブラックは、カナダ、バンクーバーのBCITでコンピューターサイエンスを学ぶ学生です。意味のある、そしてアクセスしやすい体験を創造することに情熱を注いでいます。",
         "keywords": "Emma Meredith‑Black, BCIT, コンピューターサイエンス, ソフトウェア開発, Web開発, バンクーバー, カナダ",
         "site-name": "Emma Meredith‑Black",
         "locale": "ja_JP"

@@ -25,7 +25,7 @@ import {
 import { useTheme } from 'next-themes';
 import Settings from './icons/remixicon/settings';
 import { useTranslations } from 'next-intl';
-import { Link } from '../navigation';
+import { Link, useRouter } from '../navigation';
 import locales from '../i18nAvalibleLocales.json';
 import { useMediaQuery } from 'usehooks-ts';
 import React from 'react';
@@ -37,6 +37,7 @@ interface ButtonSettingsProps {
 export default function ButtonSettings(props: ButtonSettingsProps) {
     const t = useTranslations('settings');
     const isDesktop = useMediaQuery('(min-width: 768px)');
+    const isShort = useMediaQuery('(max-height: 600px)');
     const [open, setOpen] = React.useState(false);
 
     const langsButton = 0;
@@ -56,7 +57,7 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                         <Settings />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-52 p-0">
+                <PopoverContent aria-label='Settings' className="w-52 p-0" avoidCollisions={true} side={isShort ? 'right' : undefined}>
                     <SettingsList setOpen={setOpen} t={t} props={props} />
                 </PopoverContent>
             </Popover>
@@ -102,9 +103,13 @@ function SettingsList({
     props: ButtonSettingsProps;
 }) {
     const { setTheme } = useTheme();
+    const router = useRouter();
     const langs = locales.locales.map((locale) => {
         return (
-            <CommandItem asChild key={locale}>
+            <CommandItem asChild key={locale} onSelect={() =>{
+                setOpen(false);
+                router.replace(props.href, { locale });
+            }}>
                 <Link href={props.href} locale={locale}>
                     {t(`lang-${locale}`)}
                     <CommandShortcut>{t(`lang-${locale}-current`)}</CommandShortcut>
@@ -122,6 +127,7 @@ function SettingsList({
                             setOpen(false);
                             setTheme('system');
                         }}
+                        autoFocus
                     >
                         {t('systemdefault')}
                     </CommandItem>
