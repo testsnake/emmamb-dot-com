@@ -6,7 +6,8 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "contact": "Contact",
-        "settings": "Settings"
+        "settings": "Settings",
+        "pronounciation": ""
     },
     "settings": {
         "title": "Settings",
