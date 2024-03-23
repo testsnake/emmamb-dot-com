@@ -14,6 +14,7 @@ const inter = Inter({
 
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
+import type { Viewport } from 'next'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
     const t = await getTranslations({ locale, namespace: 'metadata' });
@@ -68,6 +69,13 @@ export async function generateMetadata({ params: { locale } }: { params: { local
         }
     };
 }
+
+export const viewport: Viewport = {
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#c084fc' },
+      { media: '(prefers-color-scheme: dark)', color: '#7e22ce' },
+    ],
+  }
 
 export default function RootLayout({
     children,
