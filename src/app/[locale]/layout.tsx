@@ -64,7 +64,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
             nocache: true
         },
         other: {
-            "google-site-verification": "LaN35pw5rPNkAPt05x2SvVBb7Y1uhSBFNnt9EohQOqA"
+            'google-site-verification': 'LaN35pw5rPNkAPt05x2SvVBb7Y1uhSBFNnt9EohQOqA'
         }
     };
 }

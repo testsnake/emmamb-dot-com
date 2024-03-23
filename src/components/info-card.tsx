@@ -8,11 +8,7 @@ import ButtonSettings from './button-settings';
 import { useTranslations } from 'next-intl';
 import ContactDialog from './contact-dialog';
 
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-  } from "@/components/ui/hover-card"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 
 const InfoCard = () => {
     const t = useTranslations('common');
@@ -27,16 +23,18 @@ const InfoCard = () => {
                         </AvatarFallback>
                     </Avatar>
                     <div className="w-auto text-xl font-semibold leading-none bg-gradient-to-r from-indigo-600 to-pink-500 text-white p-1">
-                        {
-                        t('pronounciation') ? 
+                        {t('pronounciation') ? (
                             <HoverCard>
-                            <HoverCardTrigger><h1>{t('name')}</h1></HoverCardTrigger>
-                            <HoverCardContent side='top' className='text-sm text-center w-auto select-none p-1'>
-                                {t('pronounciation')}
-                            </HoverCardContent>
-                        </HoverCard>
-                        : t('name')
-                        }
+                                <HoverCardTrigger>
+                                    <h1>{t('name')}</h1>
+                                </HoverCardTrigger>
+                                <HoverCardContent side="top" className="text-sm text-center w-auto select-none p-1">
+                                    {t('pronounciation')}
+                                </HoverCardContent>
+                            </HoverCard>
+                        ) : (
+                            t('name')
+                        )}
                     </div>
                 </div>
             </CardHeader>

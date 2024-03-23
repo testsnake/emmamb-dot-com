@@ -57,7 +57,12 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                         <Settings />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent aria-label='Settings' className="w-52 p-0" avoidCollisions={true} side={isShort ? 'right' : undefined}>
+                <PopoverContent
+                    aria-label="Settings"
+                    className="w-52 p-0"
+                    avoidCollisions={true}
+                    side={isShort ? 'right' : undefined}
+                >
                     <SettingsList setOpen={setOpen} t={t} props={props} />
                 </PopoverContent>
             </Popover>
@@ -106,10 +111,14 @@ function SettingsList({
     const router = useRouter();
     const langs = locales.locales.map((locale) => {
         return (
-            <CommandItem asChild key={locale} onSelect={() =>{
-                setOpen(false);
-                router.replace(props.href, { locale });
-            }}>
+            <CommandItem
+                asChild
+                key={locale}
+                onSelect={() => {
+                    setOpen(false);
+                    router.replace(props.href, { locale });
+                }}
+            >
                 <Link href={props.href} locale={locale}>
                     {t(`lang-${locale}`)}
                     <CommandShortcut>{t(`lang-${locale}-current`)}</CommandShortcut>
