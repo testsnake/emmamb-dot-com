@@ -37,6 +37,7 @@ interface ButtonSettingsProps {
 export default function ButtonSettings(props: ButtonSettingsProps) {
     const t = useTranslations('settings');
     const isDesktop = useMediaQuery('(min-width: 768px)');
+    const isShort = useMediaQuery('(max-height: 600px)');
     const [open, setOpen] = React.useState(false);
 
     const langsButton = 0;
@@ -56,7 +57,7 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                         <Settings />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-52 p-0">
+                <PopoverContent className="w-52 p-0" avoidCollisions={true} side={isShort ? 'right' : undefined}>
                     <SettingsList setOpen={setOpen} t={t} props={props} />
                 </PopoverContent>
             </Popover>
