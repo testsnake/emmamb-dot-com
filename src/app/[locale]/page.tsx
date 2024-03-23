@@ -5,8 +5,8 @@ import InfoCard from '@/components/info-card';
 export default function HomePage() {
     const t = useTranslations('common');
     return (
-        <div className="flex h-screen dark:">
-            <div className="2xs:m-auto h-[100%] 2xs:h-auto w-[100%] max-w-[320px]">
+        <div className="flex h-screen overflow-clip">
+            <div className="2xs:m-auto 2xs:h-auto w-[100%] max-w-[370px] pb-0 ml:pb-24">
                 <AspectRatio ratio={3 / 2}>
                     <InfoCard />
                 </AspectRatio>
