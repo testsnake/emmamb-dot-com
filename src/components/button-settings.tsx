@@ -57,7 +57,7 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                         <Settings />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-52 p-0" avoidCollisions={true} side={isShort ? 'right' : undefined}>
+                <PopoverContent aria-label='Settings' className="w-52 p-0" avoidCollisions={true} side={isShort ? 'right' : undefined}>
                     <SettingsList setOpen={setOpen} t={t} props={props} />
                 </PopoverContent>
             </Popover>
@@ -127,6 +127,7 @@ function SettingsList({
                             setOpen(false);
                             setTheme('system');
                         }}
+                        autoFocus
                     >
                         {t('systemdefault')}
                     </CommandItem>
