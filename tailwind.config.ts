@@ -7,6 +7,7 @@ const config = {
     prefix: '',
     theme: {
         screens: {
+            'ml': { 'raw': '(min-height: 800px)' },
             '3xs': '200px',
             '2xs': '320px',
             'xs': '475px',

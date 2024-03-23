@@ -50,7 +50,7 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                         aria-expanded="true"
                         aria-label={t('title')}
                         aria-haspopup="menu"
-                        className="rounded-full p-2 w-[100%] 2xs:w-10 h-10"
+                        className="rounded-full p-2 w-[100%] 2xs:h-12 2xs:w-12 duration-0"
                         id="mode"
                         variant="outline"
                     >
@@ -76,7 +76,7 @@ export default function ButtonSettings(props: ButtonSettingsProps) {
                     aria-expanded="true"
                     aria-label={t('title')}
                     aria-haspopup="menu"
-                    className="rounded-full p-2 w-[100%] 2xs:w-10 h-10"
+                    className="rounded-full p-2 w-[100%] 2xs:h-12 2xs:w-12 duration-0"
                     id="mode"
                     variant="outline"
                 >

@@ -12,7 +12,7 @@ interface ButtonLinkProps {
 const ButtonLink: React.FC<ButtonLinkProps> = ({ href, name, children }) => {
     const t = useTranslations('common');
     return (
-        <Button className="rounded-full p-2 w-[100%] 2xs:w-10 h-10" variant="outline" asChild>
+        <Button className="rounded-full p-2 w-[100%] 2xs:h-12 2xs:w-12 duration-0" variant="outline" asChild>
             <Link href={href} aria-label={t(name)}>
                 {children}
             </Link>
