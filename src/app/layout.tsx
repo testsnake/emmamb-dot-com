@@ -5,7 +5,6 @@ const inter = Inter({
     variable: '--font-sans'
 });
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html>
