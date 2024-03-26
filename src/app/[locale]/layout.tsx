@@ -1,20 +1,14 @@
 import '~/styles/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
-import { Inter } from 'next/font/google';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import i18nAvalibleLocales from '../../i18nAvalibleLocales.json';
 
-const inter = Inter({
-    subsets: ['latin'],
-    variable: '--font-sans'
-});
-
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
-import type { Viewport } from 'next'
+import type { Viewport } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
     const t = await getTranslations({ locale, namespace: 'metadata' });
@@ -72,10 +66,10 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export const viewport: Viewport = {
     themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#c084fc' },
-      { media: '(prefers-color-scheme: dark)', color: '#7e22ce' },
-    ],
-  }
+        { media: '(prefers-color-scheme: light)', color: '#c084fc' },
+        { media: '(prefers-color-scheme: dark)', color: '#7e22ce' }
+    ]
+};
 
 export default function RootLayout({
     children,
@@ -86,16 +80,12 @@ export default function RootLayout({
 }) {
     const messages = useMessages();
     return (
-        <html lang={locale}>
-            <body className={`font-sans ${inter.variable}`}>
-                <NextIntlClientProvider messages={messages}>
-                    <ThemeProvider attribute="class" defaultTheme="system">
-                        {children}
-                        <Analytics />
-                        <SpeedInsights />
-                    </ThemeProvider>
-                </NextIntlClientProvider>
-            </body>
-        </html>
+        <NextIntlClientProvider messages={messages}>
+            <ThemeProvider attribute="class" defaultTheme="system">
+                {children}
+                <Analytics />
+                <SpeedInsights />
+            </ThemeProvider>
+        </NextIntlClientProvider>
     );
 }
