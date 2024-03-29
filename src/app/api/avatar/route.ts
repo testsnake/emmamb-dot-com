@@ -41,7 +41,12 @@ export async function GET(request: Request) {
         console.log('Image processed successfully');
 
         // Convert png to ico
-        pngToIco(iconPath)
+
+        const icon16x16Buffer = await sharp(Buffer.from(imageBuffer)).resize(16, 16).toBuffer();
+        const icon32x32Buffer = await sharp(Buffer.from(imageBuffer)).resize(32, 32).toBuffer();
+        const icon48x48Buffer = await sharp(Buffer.from(imageBuffer)).resize(48, 48).toBuffer();
+
+        pngToIco([icon16x16Buffer, icon32x32Buffer, icon48x48Buffer])
             .then((buf) => {
                 fs.writeFileSync(faviconPath, buf);
             })
