@@ -1,5 +1,6 @@
 {
-    "locales": ["en", "fr", "ja", "zh-Hans", "zh-Hant"],
+    "locales": ["en", "fr", "ja", "zh-Hans", "zh-Hant", "tok"],
+    "secret": ["tok"],
     "defaultLocale": "en",
     "localesDir": {
         "en": "/",
@@ -11,6 +12,7 @@
         "fr-fr": "/fr",
         "ja": "/ja",
         "ja-JP": "/ja",
+        "tok": "/tok",
         "zh": "/zh-Hans",
         "zh-CN": "/zh-Hans",
         "zh-Hans": "/zh-Hans",
