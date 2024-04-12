@@ -109,7 +109,11 @@ function SettingsList({
 }) {
     const { setTheme } = useTheme();
     const router = useRouter();
+    const secretLangs = locales.secret;
     const langs = locales.locales.map((locale) => {
+        if (secretLangs.includes(locale)) {
+            return null;
+        }
         return (
             <CommandItem
                 asChild
