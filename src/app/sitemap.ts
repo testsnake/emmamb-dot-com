@@ -1,18 +1,18 @@
+import i18nAvalibleLocales from "~/i18nAvalibleLocales.json"
+
 export default function sitemap() {
+    const baseUrl = 'https://emmamb.com';
+
+    const alternates = i18nAvalibleLocales.locales.map(lang => ({
+        lang: lang === 'en' ? baseUrl : `${baseUrl}/${lang}`
+    }));
     return [
         {
             url: 'https://emmamb.com',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             alternates: {
-                languages: {
-                    en: 'https://emmamb.com',
-                    fr: 'https://emmamb.com/fr',
-                    ja: 'https://emmamb.com/ja',
-                    zh: 'https://emmamb.com/zh-Hans',
-                    'zh-Hans': 'https://emmamb.com/zh-Hans',
-                    'zh-Hant': 'https://emmamb.com/zh-Hant'
-                }
+                languages: alternates
             }
         }
     ];
