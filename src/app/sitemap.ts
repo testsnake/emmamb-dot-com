@@ -1,9 +1,9 @@
-import i18nAvalibleLocales from "~/i18nAvalibleLocales.json"
+import i18nAvalibleLocales from '~/i18nAvalibleLocales.json';
 
 export default function sitemap() {
     const baseUrl = 'https://emmamb.com';
 
-    const alternates = i18nAvalibleLocales.locales.map(lang => ({
+    const alternates = i18nAvalibleLocales.locales.map((lang) => ({
         lang: lang === 'en' ? baseUrl : `${baseUrl}/${lang}`
     }));
     return [
