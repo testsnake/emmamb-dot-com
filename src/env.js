@@ -8,7 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    WEBSITE_URL: z.string()
+    WEBSITE_URL: z.string(),
+    EMAIL_ACCESS_KEY: z.string(),
   },
 
   /**
@@ -26,7 +27,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    WEBSITE_URL: process.env.WEBSITE_URL
+    WEBSITE_URL: process.env.WEBSITE_URL,
+    EMAIL_ACCESS_KEY: process.env.EMAIL_ACCESS_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

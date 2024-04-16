@@ -12,6 +12,9 @@ export default createMiddleware({
 });
 
 export const config = {
-    // Matches all routes that are not prefixed with /_next or /_vercel or have a file extension, and is not /api
-    matcher: ['/', '/([\\w-]+)', '/([\\w-]+)?/contact/(.+)', '/((?!_next|_vercel|api|.*\\..*).*)']
+    // Matches all routes that are 
+    // - not prefixed with /_ (e.g /_next and /_vercel) 
+    // - not /api
+    // - not a file
+    matcher: ['^/((?!_)(?!api)[^.]+)$']
 };
