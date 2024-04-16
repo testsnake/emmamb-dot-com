@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
-import supported from './i18nAvalibleLocales.json';
+import supported from '~/i18nAvalibleLocales.json';
 import { IntlErrorCode } from 'next-intl';
 
 export default getRequestConfig(async ({ locale }) => {
@@ -11,7 +11,7 @@ export default getRequestConfig(async ({ locale }) => {
         messages: (await import(`../messages/${locale}.json`)).default,
         onError(error) {
             if (error.code === IntlErrorCode.MISSING_MESSAGE) {
-                // Missing translations are expected and should only log an error
+                // Missing translations are somewhat expected and should only log an error
                 console.error(error);
             } else {
                 console.error(error);
