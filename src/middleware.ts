@@ -8,6 +8,7 @@ export default createMiddleware({
     // Used when no locale matches
     defaultLocale: 'en',
 
+    // Use prefix for locale in the URL
     localePrefix: localePrefix
 });
 

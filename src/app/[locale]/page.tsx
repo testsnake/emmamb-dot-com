@@ -1,5 +1,5 @@
 import { AspectRatio } from '~/components/ui/aspect-ratio';
-import InfoCard from '@/components/info-card';
+import InfoCard from '~/components/old/info-card';
 
 export default function HomePage() {
     return (

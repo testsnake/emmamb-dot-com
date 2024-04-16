@@ -23,10 +23,10 @@ import {
     CommandShortcut
 } from '@/components/ui/command';
 import { useTheme } from 'next-themes';
-import Settings from './icons/remixicon/settings';
+import Settings from '../icons/remixicon/settings';
 import { useTranslations } from 'next-intl';
-import { Link, useRouter } from '../navigation';
-import locales from '../i18nAvalibleLocales.json';
+import { Link, useRouter } from '../../navigation';
+import locales from '../../i18nAvalibleLocales.json';
 import { useMediaQuery } from 'usehooks-ts';
 import React from 'react';
 

@@ -15,8 +15,8 @@ import {
     DialogContent,
     Dialog
 } from '@/components/ui/dialog';
-import Contact from './icons/remixicon/contact';
-import { Label } from './ui/label';
+import Contact from '../icons/remixicon/contact';
+import { Label } from '../ui/label';
 import { useTranslations } from 'next-intl';
 import { Loader2 } from 'lucide-react';
 

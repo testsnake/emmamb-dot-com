@@ -6,7 +6,11 @@ import sharp from 'sharp';
 import pngToIco from 'png-to-ico';
 
 export async function GET(request: Request) {
-    const gravatarUrl = 'https://www.gravatar.com/avatar/92f6c8e968dc5df2da9ed84cdfacb078';
+    const gravatarUrl = process.env.GRAVATAR_URL;
+    if (!gravatarUrl) {
+        console.error('Gravatar URL not set');
+        return new Response('Gravatar URL not set', { status: 500 });
+    }
     const publicDir = path.resolve('./public');
     const maskPath = path.join(publicDir, 'circle-mask.png');
     const iconPath = path.join(publicDir, 'icon.png');

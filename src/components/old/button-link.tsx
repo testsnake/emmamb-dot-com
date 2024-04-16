@@ -1,5 +1,5 @@
-import { Link } from '../navigation';
-import { Button } from './ui/button';
+import { Link } from '../../navigation';
+import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
 import React, { ReactNode } from 'react';
 
