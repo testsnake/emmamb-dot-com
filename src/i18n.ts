@@ -11,13 +11,15 @@ export default getRequestConfig(async ({ locale }) => {
         messages: (await import(`../messages/${locale}.json`)).default,
         onError(error) {
             if (error.code === IntlErrorCode.MISSING_MESSAGE) {
-                // Missing translations are somewhat expected and should only log an error
+                // Missing translations are somewhat expected in development and should only log an error
                 console.error(error);
             } else {
                 console.error(error);
             }
+            
         },
         getMessageFallback({ namespace, key, error }) {
+            // Return key on fallback
             const path = [namespace, key].filter((part) => part != null).join('.');
 
             if (error.code === IntlErrorCode.MISSING_MESSAGE) {
