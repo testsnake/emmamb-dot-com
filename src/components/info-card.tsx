@@ -22,7 +22,7 @@ const InfoCard = () => {
                             {t('name-initials')}
                         </AvatarFallback>
                     </Avatar>
-                    <div className="w-auto text-xl 2xs:text-2xl text-center font-semibold leading-none bg-gradient-to-r from-indigo-600 to-pink-500 text-white p-1">
+                    <div className="w-auto whitespace-nowrap text-xl 2xs:text-2xl text-center font-semibold leading-none bg-gradient-to-r from-indigo-600 to-pink-500 text-white p-1">
                         {t('pronounciation') ? (
                             <HoverCard>
                                 <HoverCardTrigger>
