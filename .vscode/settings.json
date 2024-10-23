@@ -4,5 +4,10 @@
     "prettier.tabWidth": 4,
     "prettier.printWidth": 120,
     "editor.tabSize": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "i18n-ally.localesPaths": [
+        "messages",
+        "src/app/api/messages"
+    ],
+    "i18n-ally.keystyle": "nested"
 }
