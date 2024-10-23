@@ -3,6 +3,8 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator';
 import GitHub from '~/components/icons/remixicon/github';
 import LinkedIn from '~/components/icons/remixicon/linkedin';
+import Bluesky from './icons/remixicon/bluesky';
+import Instagram from './icons/remixicon/instagram';
 import ButtonLink from './button-link';
 import ButtonSettings from './button-settings';
 import { useTranslations } from 'next-intl';
@@ -48,6 +50,12 @@ const InfoCard = () => {
                 </ButtonLink>
                 <ButtonLink href="https://www.linkedin.com/in/emma-meredith-black/" name="linkedin">
                     <LinkedIn />
+                </ButtonLink>
+                <ButtonLink href="https://bsky.app/profile/emmamb.com" name="github">
+                    <Bluesky />
+                </ButtonLink>
+                <ButtonLink href="https://www.instagram.com/emma0mb/" name="github">
+                    <Instagram />
                 </ButtonLink>
                 <ContactDialog />
                 <ButtonSettings href="/" />
