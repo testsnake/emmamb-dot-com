@@ -51,10 +51,10 @@ const InfoCard = () => {
                 <ButtonLink href="https://www.linkedin.com/in/emma-meredith-black/" name="linkedin">
                     <LinkedIn />
                 </ButtonLink>
-                <ButtonLink href="https://bsky.app/profile/emmamb.com" name="github">
+                <ButtonLink href="https://bsky.app/profile/emmamb.com" name="Bluesky">
                     <Bluesky />
                 </ButtonLink>
-                <ButtonLink href="https://www.instagram.com/emma0mb/" name="github">
+                <ButtonLink href="https://www.instagram.com/emma0mb/" name="Instagram">
                     <Instagram />
                 </ButtonLink>
                 <ContactDialog />
